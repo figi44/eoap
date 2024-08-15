@@ -35,7 +35,7 @@ def main(files):
         item.add_asset(
             name,
             pystac.Asset(
-                href=f_copy,
+                href=os.path.basename(f_copy),
                 media_type=pystac.MediaType.GEOTIFF,
                 roles=["data"],
                 extra_fields={"file:size": os.path.getsize(f_copy)},
