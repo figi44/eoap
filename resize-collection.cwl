@@ -7,8 +7,8 @@ schemas:
 $graph:
   - class: Workflow
     id: resize-collection
-    label: Resize sentinel2ard collection
-    doc: Resize sentinel2ard collection
+    label: Resize collection cogs
+    doc: Resize collection cogs
     requirements:
       - class: ScatterFeatureRequirement
     inputs:
