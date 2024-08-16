@@ -16,16 +16,12 @@ def main(catalog, collection):
 
     urls = []
     ids = []
-    i = 0
 
     for item in collection.get_items():
         cog = item.assets.get("cog")
         if cog is not None:
             urls.append(cog.href)
             ids.append(item.id)
-            i += 1
-        if i == 2:
-            break
 
     with open("urls.txt", "w") as f:
         print(*urls, file=f, sep="\n", end="")

@@ -16,10 +16,12 @@ $graph:
         label: catalog
         doc: full catalog path
         type: string
+        default: "supported-datasets/ceda-stac-fastapi"
       collection:
         label: collection
         doc: collection id
         type: string
+        default: "sentinel2_ard"
     outputs:
       - id: stac_output
         outputSource:
