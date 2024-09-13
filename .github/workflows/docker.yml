@@ -8,3 +8,8 @@ jobs:
     uses: EO-DataHub/eoap-gen/.github/workflows/generate-reusable.yml@main
     with:
       config: eoap-gen-config.yml
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
