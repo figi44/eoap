@@ -1,0 +1,42 @@
+id: resize-collection
+doc: Resize collection cogs
+label: Resize collection cogs
+inputs:
+  - id: catalog
+    label: catalog
+    doc: full catalog path
+    type: string
+    default: supported-datasets/ceda-stac-fastapi
+  - id: collection
+    label: collection id
+    doc: collection id
+    type: string
+    default: sentinel2_ard
+outputs:
+  []
+  # - id: stac_output
+  #   type: Directory
+  #   source:
+  #     - step3/stac_catalog
+steps:
+  - id: get_urls
+    script: cli/get_urls/get_urls.py
+    requirements: cli/get_urls/requirements.txt
+    inputs:
+      - id: catalog
+        source: resize-collection/catalog
+      - id: collection
+        source: resize-collection/collection
+    outputs:
+      - id: urls
+        type: string[]
+        outputBinding:
+          loadContents: true
+          glob: urls.txt
+          outputEval: $(self[0].contents.split('\n'))
+      - id: ids
+        type: string[]
+        outputBinding:
+          loadContents: true
+          glob: ids.txt
+          outputEval: $(self[0].contents.split('\n'))
