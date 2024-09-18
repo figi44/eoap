@@ -13,9 +13,8 @@ pyeodh.set_log_level(10)
 
 username = os.getenv("ADES_USER")
 token = os.getenv("ADES_TOKEN")
-s3_token = os.getenv("ADES_S3_TOKEN")
 
-client = pyeodh.Client(username=username, token=token, s3_token=s3_token)
+client = pyeodh.Client(username=username, token=token, s3_token=token)
 ades = client.get_ades()
 
 CWL_FILE = "resize-collection.cwl"

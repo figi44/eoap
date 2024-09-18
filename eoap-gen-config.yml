@@ -12,12 +12,7 @@ inputs:
     doc: collection id
     type: string
     default: sentinel2_ard
-outputs:
-  []
-  # - id: stac_output
-  #   type: Directory
-  #   source:
-  #     - step3/stac_catalog
+outputs: []
 steps:
   - id: get_urls
     script: cli/get_urls/get_urls.py
